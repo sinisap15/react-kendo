@@ -1,58 +1,58 @@
-import * as React from 'react';
+import * as React from "react";
 import {
   Chart,
   ChartLegend,
   ChartSeries,
   ChartSeriesItem,
   ChartTitle,
-} from '@progress/kendo-react-charts';
-import 'hammerjs';
+} from "@progress/kendo-react-charts";
+import "hammerjs";
 
 const series = [
   {
-    category: 'Infrastructure',
+    category: "Infrastructure",
     value: 6000,
-    color: '#4B5FFA',
+    color: "#4B5FFA",
   },
   {
-    category: 'Services',
+    category: "Services",
     value: 6000,
-    color: '#2196F3',
+    color: "#2196F3",
   },
   {
-    category: 'R&D',
+    category: "R&D",
     value: 6000,
-    color: '#43A047',
+    color: "#43A047",
   },
   {
-    category: 'Outsourcing',
+    category: "Outsourcing",
     value: 6000,
-    color: '#FFC107',
+    color: "#FFC107",
   },
   {
-    category: 'Marketing',
+    category: "Marketing",
     value: 6000,
-    color: '#FF5722',
+    color: "#FF5722",
   },
   {
-    category: 'Strategy',
+    category: "Strategy",
     value: 6000,
-    color: '#E91E63',
+    color: "#E91E63",
   },
 ];
 
 export const CostBreakdownChart = () => (
-   <div className="total-cost-container">
-     <Chart>
-    <ChartLegend position="right" orientation="vertical" />
-    <ChartSeries>
-      <ChartSeriesItem
-        type="pie"
-        data={series}
-        field="value"
-        categoryField="category"
-      />
-    </ChartSeries>
-  </Chart>
-   </div>
+  <div className="total-cost-container">
+    <Chart>
+      <ChartLegend position="right" orientation="vertical" />
+      <ChartSeries>
+        <ChartSeriesItem
+          type="pie"
+          data={series}
+          field="value"
+          categoryField="category"
+        />
+      </ChartSeries>
+    </Chart>
+  </div>
 );

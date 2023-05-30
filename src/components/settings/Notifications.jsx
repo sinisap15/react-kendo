@@ -1,61 +1,60 @@
 import * as React from "react";
-import { Navigation } from "../settings/Navigation"
-import { TileLayout } from '@progress/kendo-react-layout';
+import { Navigation } from "../settings/Navigation";
+import { TileLayout } from "@progress/kendo-react-layout";
 import { Date } from "../settings/Date";
-import { Weather } from '../settings/Weather';
+import { Weather } from "../settings/Weather";
 import { IconHeader } from "../settings/IconHeader";
-import { SwitchOptions } from '../settings/SwitchOptions';
+import { SwitchOptions } from "../settings/SwitchOptions";
 
 export const Notifications = () => {
-   const [data, setData] = React.useState([
-      {
-        col: 1,
-        colSpan: 3,
-        rowSpan: 4,
-      },
-      {
-        col: 4,
-        colSpan: 3,
-        rowSpan: 2,
-      },
-      {
-        col: 4,
-        colSpan: 3,
-        rowSpan: 2,
-      },
-    ]);
+  const [data, setData] = React.useState([
+    {
+      col: 1,
+      colSpan: 3,
+      rowSpan: 4,
+    },
+    {
+      col: 4,
+      colSpan: 3,
+      rowSpan: 2,
+    },
+    {
+      col: 4,
+      colSpan: 3,
+      rowSpan: 2,
+    },
+  ]);
 
-    const tiles = [
-      {
-        header: <Navigation/>,
-        body: <SwitchOptions/>,
-        reorderable: false
-      },
-      {
-        header: 'Date',
-        body: <Date />,
-        reorderable: false
+  const tiles = [
+    {
+      header: <Navigation />,
+      body: <SwitchOptions />,
+      reorderable: false,
+    },
+    {
+      header: "Date",
+      body: <Date />,
+      reorderable: false,
+    },
+    {
+      header: <IconHeader />,
+      body: <Weather />,
+      reorderable: false,
+    },
+  ];
 
-      },
-      {
-        header: <IconHeader/>,
-        body: <Weather />,
-        reorderable: false
-
-      },
-    ];
-    
-
-   return <div>          
+  return (
+    <div>
       <TileLayout
-      columns={5}
-      rowHeight={255}
-      positions={data}
-      gap={{
-        rows: 12,
-        columns: 12,
-      }}
-      items={tiles}
-    />
-   </div>
-}
+        columns={5}
+        rowHeight={255}
+        positions={data}
+        gap={{
+          rows: 12,
+          columns: 12,
+        }}
+        items={tiles}
+      />
+    </div>
+  );
+};

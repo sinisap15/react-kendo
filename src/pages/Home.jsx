@@ -1,9 +1,9 @@
-import { DrawerContainer } from '../components/DrawerContainer'
+import { DrawerContainer } from "../components/DrawerContainer";
 
 export const Home = () => {
- return (
-   <div>
-      <DrawerContainer/>
-   </div>
- )
-}
+  return (
+    <div>
+      <DrawerContainer />
+    </div>
+  );
+};

@@ -1,4 +1,4 @@
-import * as React from 'react';
+import * as React from "react";
 import {
   Chart,
   ChartTooltip,
@@ -10,13 +10,13 @@ import {
   ChartXAxisItem,
   ChartYAxis,
   ChartYAxisItem,
-} from '@progress/kendo-react-charts';
-import data from '../../data/bubble-chart.json';
-import 'hammerjs';
+} from "@progress/kendo-react-charts";
+import data from "../../data/bubble-chart.json";
+import "hammerjs";
 
 export const BubbleChart = () => (
   <Chart>
-    <ChartTitle text="Reveenue per Product Type" align="left"/>
+    <ChartTitle text="Reveenue per Product Type" align="left" />
     <ChartSeries>
       <ChartSeriesItem
         type="bubble"
@@ -32,16 +32,16 @@ export const BubbleChart = () => (
         axisCrossingValue={-5000}
         majorUnit={2000}
         labels={{
-          format: '{0:N0}',
+          format: "{0:N0}",
           skip: 1,
-          rotation: 'auto',
+          rotation: "auto",
         }}
       />
     </ChartXAxis>
     <ChartYAxis>
       <ChartYAxisItem
         labels={{
-          format: '{0:N0}',
+          format: "{0:N0}",
         }}
       />
     </ChartYAxis>
