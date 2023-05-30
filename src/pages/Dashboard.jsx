@@ -1,7 +1,11 @@
 import * as React from "react";
-import { TileLayout } from "@progress/kendo-react-layout";
+import { TabStrip, TileLayout, TabStripTab, PanelBar, PanelBarItem } from "@progress/kendo-react-layout";
+import { Form, Field, FormElement, FieldWrapper } from "@progress/kendo-react-form";
 import { ArcGauge } from "@progress/kendo-react-gauges";
 import { DashboardGrid } from "../components/dashboard/DashboardGrid";
+import ProductsGrid from "../components/dashboard/ProductsGrid";
+import { TextBox, NumericTextBox } from "@progress/kendo-react-inputs";
+import { Label } from "@progress/kendo-react-labels";
 
 const colors = [
   {
@@ -105,6 +109,11 @@ const tiles = [
 
 export const Dashboard = () => {
 
+  const [selected, setSelected] = React.useState(0);
+  const handleSelect = (e) => {
+    setSelected(e.selected);
+  }
+
   const [data, setData] = React.useState([
     {
       col: 1,
@@ -130,7 +139,47 @@ export const Dashboard = () => {
 
       <TileLayout columns={4} items={tiles} rowHeight={230} />
 
-      <DashboardGrid />
+      <TabStrip selected={selected} onSelect={handleSelect}>
+        <TabStripTab title="My Team" className="mb-2">
+          <PanelBar>
+            <PanelBarItem expanded={true} title="Filters">
+              <div className="row p-4 mb-2">
+                <div className="col-3">
+                  <Label>Contact Name: </Label>
+                  <TextBox placeholder="Type contact name: "></TextBox>
+                </div>
+                <div className="col-3">
+                  <Label>Job title: </Label>
+                  <TextBox placeholder="Type job title: "></TextBox>
+                </div>
+                <div className="col-3">
+                  <Label>Budget: </Label>
+                  <NumericTextBox placeholder="Type budget"></NumericTextBox>
+                </div>
+                <div className="col-3">
+                  <Label>Test</Label>
+                  <NumericTextBox></NumericTextBox>
+                </div>
+              </div>
+            </PanelBarItem>
+          </PanelBar>
+          <DashboardGrid />
+        </TabStripTab>
+        <TabStripTab title="Products">
+          <ProductsGrid />
+        </TabStripTab>
+      </TabStrip>
+
+      {/* <TileLayout
+        columns={2}
+        rowHeight={255}
+        positions={data}
+        gap={{
+          rows: 10,
+          columns: 10,
+        }}
+        items={secondSectionTiles}
+      /> */}
     </div>
   );
 };

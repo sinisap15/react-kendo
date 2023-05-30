@@ -1,8 +1,8 @@
 import * as React from "react";
-import { Form, Field, FormElement } from "@progress/kendo-react-form";
-import { Input, Switch } from "@progress/kendo-react-inputs";
+import { Form, Field, FormElement, FieldWrapper } from "@progress/kendo-react-form";
+import { Input, NumericTextBox, Switch } from "@progress/kendo-react-inputs";
 import { Label } from "@progress/kendo-react-labels";
-import { DateInput } from "@progress/kendo-react-dateinputs";
+import { DateInput, DatePicker } from "@progress/kendo-react-dateinputs";
 import { DropDownList } from "@progress/kendo-react-dropdowns";
 
 export const UserForm = () => {
@@ -113,7 +113,7 @@ export const UserForm = () => {
               <div className="left col-12 col-md-6 example-col">
                 <div>
                   <Label>Birth Date</Label>
-                  <DateInput width="100%" name={"birthdate"} />
+                  <DatePicker width="100%" name={"birthdate"} />
                 </div>
               </div>
 
